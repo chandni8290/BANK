@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Menu</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome to Python ATM</h2>
+        <p><strong>Balance:</strong> ₹{{ balance }}</p>
+
+        {% if message %}<p class="message">{{ message }}</p>{% endif %}
+
+        <form method="POST">
+            <input type="hidden" name="action" value="balance">
+            <button type="submit">View Balance</button>
+        </form>
+
+        <form method="POST">
+            <input type="hidden" name="action" value="deposit">
+            <input type="number" name="amount" placeholder="Enter deposit amount" required>
+            <button type="submit">Deposit</button>
+        </form>
+
+        <form method="POST">
+            <input type="hidden" name="action" value="withdraw">
+            <input type="number" name="amount" placeholder="Enter withdraw amount" required>
+            <button type="submit">Withdraw</button>
+        </form>
+
+        <form method="POST">
+            <input type="hidden" name="action" value="logout">
+            <button type="submit" class="logout">Logout</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ATM Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>🏦 ATM Login</h2>
+        {% if error %}<p class="error">{{ error }}</p>{% endif %}
+        <form method="POST">
+            <input type="text" name="account" placeholder="Account Number" required>
+            <input type="password" name="pin" placeholder="PIN" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
